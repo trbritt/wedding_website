@@ -6,7 +6,7 @@ const nextConfig = {
     unoptimized: true
   },
   // Set the correct base path to work with static hosting
-  basePath: '',
+  basePath: '/wedding_website',
   // Enable SWC minification for faster builds
   swcMinify: true,
   // Optimize fonts
