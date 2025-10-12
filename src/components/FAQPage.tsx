@@ -132,7 +132,7 @@ const FAQPage = () => {
       faqs: [
         {
           question: "À quelle heure dois-je arriver pour la cérémonie?",
-          answer: "Nous sommes encore en train de finaliser les détails, mais nous espérons arriver avant 17 h.",
+          answer: "Nous sommes encore en train de finaliser les détails, mais prévoyez d'arriver avant 17 h.",
           category: "ceremony"
         },
         {
@@ -350,7 +350,7 @@ const FAQPage = () => {
                   {/* 11th is the hotel faq with the special link */}
                   {index == 11 ? (
                       <button
-                          className="mt-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
+                          className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
                           // style={{ backgroundColor: '#aebea4', borderColor: '#aebea4' }}
                           onClick={() => {
                             window.open(" https://docs.google.com/spreadsheets/d/1kOH4fVPYb6EaE6yqFFzcBIjINjoF-rpohRtbjBuLhLo/edit?gid=0#gid=0", '_blank', 'noopener,noreferrer')
@@ -371,7 +371,7 @@ const FAQPage = () => {
         <div className="mt-12 sm:mt-16">
           <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2 text-center" style={{ borderColor: '#862733' }}>
             <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#af6a28' }}>
-              {language === 'en' ? 'Still Have Questions?' : 'Vous Avez Encore des Questions?'}
+              {language === 'en' ? 'Still Have Questions?' : 'Vous Avez Toujours des Questions?'}
             </h3>
             <p className="font-recoleta text-gray-300 mb-6 leading-relaxed">
               {language === 'en'
