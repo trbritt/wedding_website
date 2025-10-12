@@ -47,12 +47,14 @@ const DetailsPage = () => {
         // { time: "9:30 PM", event: "Dancing & Festivities" },
         // { time: "12:00 AM", event: "Last Dance" }
       ],
+      cocktail: "Cocktail Hour",
+      cocktailDescription: "With various stations and canapés, as well as His or Her personalized drinks.",
       menu: "Dinner Menu",
-      menuDescription: "After various stations and canapés during the cocktail hour, our chef will focus on Provençal and French cuisine for everyone to enjoy.",
+      menuDescription: "Our chef has prepared a specially selected menu showcasing French and Provençal cuisine.",
       gifts: "Gifts & Registry",
       giftsDetails: "Your presence is the greatest gift of all. For those who wish to honor us with a gift, we would greatly appreciate contributions to our honeymoon fund.",
       transport: "Accommodation",
-      transportDetails: "The village of Lussan has many provincial hotels and great stays, only a 10 minute walk through the French countryside."
+      transportDetails: "There are two options for accommodations: staying in Lussan which is accessible by foot, and allows you to celebrate as hard as you wish, or staying in Uzes, which is a 20min drive away. If you wish to stay in Lussan, we put together a list of accommodations available around the village. Kindly not that we encourage you to book them as soon as possible, because they will fill up. Most bookings have to vie done through the property’s website, although we also added some VRBO links."
     },
     fr: {
       title: "Réception de Mariage",
@@ -73,12 +75,14 @@ const DetailsPage = () => {
         // { time: "21h30", event: "Danse et Festivités" },
         // { time: "00h00", event: "Dernière Danse" }
       ],
+      cocktail: "Vin d'Honneur",
+      cocktailDescription: "Diverses animations et canapés pendant l'heure du cocktail, ainsi que des boissons Lui ou Elle personalisés.",
       menu: "Menu du Dîner",
-      menuDescription: "Notre chef a préparé un menu spécialement sélectionné mettant en vedette la cuisine française et d'Amerique du Nord, honorant les deux côtés de notre héritage.",
+      menuDescription: "Notre chef a préparé un menu spécialement sélectionné mettant en vedette la cuisine française et Provençale.",
       gifts: "Cadeaux et Liste de Mariage",
       giftsDetails: "Votre présence est le plus grand cadeau de tous. Pour ceux qui souhaitent nous honorer avec un cadeau, nous apprécierions grandement les contributions à notre fonds de lune de miel.",
-      transport: "Lodgement",
-      transportDetails: "Le village du Lussan a plusieurs des hôtels, un petit marche du 10 min vers la compagne française."
+      transport: "Logement",
+      transportDetails: "Il y a deux options d’hébergement : séjourner à Lussan, accessible à pied et qui vous permettra de faire la fête sans modération, ou à Uzès, situé à environ 20 minutes en voiture. Si vous souhaitez loger à Lussan, nous avons préparé une liste d’hébergements disponibles autour du village. Nous vous invitons à réserver dès que possible, car les places partent rapidement. La plupart des réservations doivent être effectuées directement sur le site web de l’établissement, mais nous avons également ajouté quelques liens VRBO."
     }
   };
 
@@ -212,14 +216,47 @@ const DetailsPage = () => {
 
         {/* Additional Information Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* Menu */}
-          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2 flex flex-col" style={{ borderColor: '#4b5563' }}>
-            <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.menu}</h3>
+          {/* Cocktail Hour - Left Side */}
+          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
+            <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.cocktail}</h3>
             <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
-              {t.menuDescription}
+              {t.cocktailDescription}
             </p>
 
             <div className="bg-gray-700/50 rounded-lg p-4">
+              <div className="grid grid-cols-2 gap-4 text-center">
+                <div>
+                  <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v4m0 0h-3m3 0h3M4 6l8 10m0 0l8-10M12 16V6M4 6h16" />
+                    <circle cx="12" cy="4" r="1" fill="currentColor" />
+                  </svg>
+                  <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Cocktails" : "Cocktails"}</p>
+                </div>
+                <div>
+                  <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                    <ellipse cx="12" cy="8" rx="5" ry="2" fill="currentColor" opacity="0.3" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c2.761 0 5-0.895 5-2s-2.239-2-5-2-5 0.895-5 2 2.239 2 5 2z" />
+                    <circle cx="8" cy="8" r="1.5" fill="currentColor" />
+                    <circle cx="12" cy="8" r="1.5" fill="currentColor" />
+                    <circle cx="16" cy="8" r="1.5" fill="currentColor" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 8v1c0 1.105 2.239 2 5 2s5-0.895 5-2V8M6 11l-2 10h16l-2-10" />
+                  </svg>
+                  <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Canapés" : "Canapés"}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Menu - Right Side with vertical spacing */}
+          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2 flex flex-col justify-between" style={{ borderColor: '#4b5563' }}>
+            <div>
+              <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.menu}</h3>
+              <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
+                {t.menuDescription}
+              </p>
+            </div>
+
+            <div className="bg-gray-700/50 rounded-lg p-4 mt-auto">
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
                   <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="currentColor" viewBox="0 0 24 24">
@@ -229,30 +266,32 @@ const DetailsPage = () => {
                 </div>
                 <div>
                   <svg className="w-10 h-10 mx-auto mb-0 text-sage-green" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2 C 10 6, 6 10, 8 14 C 10 12, 14 12, 12 2 Z" fill="none" stroke="#2e8b57" stroke-width="1.5"/>
-                    <circle cx="12" cy="12" r="3" fill="#6b8e23"/>
+                    <path d="M12 2 C 10 6, 6 10, 8 14 C 10 12, 14 12, 12 2 Z" fill="none" stroke="#aebea4" stroke-width="1.5"/>
+                    <circle cx="12" cy="12" r="3" fill="#aebea4"/>
                   </svg>
                   <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Provencal Cuisine" : "Cuisine Provençale"}</p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Transport & Practical Info */}
-          <div className="space-y-6">
-            <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 border-2" style={{ borderColor: '#4b5563' }}>
-              <h4 className="font-shango text-lg mb-3" style={{ color: '#ecb179' }}>{t.transport}</h4>
-              <p className="font-recoleta text-gray-400 text-sm leading-relaxed">
-                {t.transportDetails}
-              </p>
-            </div>
-
-            <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 border-2" style={{ borderColor: '#4b5563' }}>
-              <h4 className="font-shango text-lg mb-3" style={{ color: '#ecb179' }}>{t.gifts}</h4>
-              <p className="font-recoleta text-gray-400 text-sm leading-relaxed">
-                {t.giftsDetails}
-              </p>
-            </div>
+        {/* Accommodation - Full width */}
+        <div className="mb-8">
+          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
+            <h4 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.transport}</h4>
+            <p className="font-recoleta text-gray-300 leading-relaxed">
+              {t.transportDetails} <br/>
+              <button
+                  className="mt-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
+                  // style={{ backgroundColor: '#aebea4', borderColor: '#aebea4' }}
+                  onClick={() => {
+                    window.open(" https://docs.google.com/spreadsheets/d/1kOH4fVPYb6EaE6yqFFzcBIjINjoF-rpohRtbjBuLhLo/edit?gid=0#gid=0", '_blank', 'noopener,noreferrer')
+                  }}
+              >
+                {language == "en" ? "Click here for a list of recommended stays." : "Cliquez ici pour une liste des séjours recommandés."}
+              </button>
+            </p>
           </div>
         </div>
 

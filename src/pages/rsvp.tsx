@@ -95,7 +95,7 @@ const RSVPPage = () => {
   const content = {
     en: {
       title: "RSVP",
-      subtitle: "Please respond by May 15, 2025",
+      subtitle: "",
       backHome: "← Back to Home",
       formTitle: "Wedding Response",
       name: "Full Name",
@@ -117,7 +117,7 @@ const RSVPPage = () => {
     },
     fr: {
       title: "RSVP",
-      subtitle: "Veuillez répondre avant le 15 mai 2025",
+      subtitle: "",
       backHome: "← Retour à l'accueil",
       formTitle: "Réponse de Mariage",
       name: "Nom Complet",
@@ -238,12 +238,43 @@ const RSVPPage = () => {
           </p>
         </div>
 
-        {/* RSVP Form */}
-        <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#af6a28' }}>
+        {/* Coming Soon Message */}
+        <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-8 sm:p-12 lg:p-16 border-2 text-center" style={{ borderColor: '#af6a28' }}>
+          <div className="mb-8">
+            <svg className="w-24 h-24 mx-auto text-burnt-orange opacity-80" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+            </svg>
+          </div>
+
+          <h2 className="font-shango text-3xl sm:text-4xl md:text-5xl mb-6" style={{ color: '#af6a28' }}>
+            {language === 'en' ? 'Coming Soon' : 'Bientôt Disponible'}
+          </h2>
+
+          <div className="flex items-center justify-center mb-6">
+            <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-sage-green to-transparent" style={{ background: 'linear-gradient(to right, transparent, #aebea4, transparent)' }}></div>
+            <div className="mx-4 w-3 h-3 rotate-45 border-2 animate-pulse" style={{ borderColor: '#af6a28' }}></div>
+            <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-burgundy to-transparent" style={{ background: 'linear-gradient(to right, transparent, #862733, transparent)' }}></div>
+          </div>
+
+          <p className="font-recoleta text-lg sm:text-xl text-gray-300 mb-4 leading-relaxed max-w-2xl mx-auto">
+            {language === 'en'
+              ? "The RSVP form will be available soon. We'll send you an email when it's ready!"
+              : "Le formulaire RSVP sera bientôt disponible. Nous vous enverrons un e-mail quand il sera prêt!"}
+          </p>
+
+          <p className="font-recoleta text-base text-gray-400 italic">
+            {language === 'en'
+              ? "Please save the date: September 12, 2026"
+              : "Veuillez réserver la date : 12 septembre 2026"}
+          </p>
+        </div>
+
+        {/* Hidden form - keeping for when you want to re-enable */}
+        <div className="hidden">
           <h2 className="font-shango text-2xl sm:text-3xl mb-8 text-center" style={{ color: '#af6a28' }}>
             {t.formTitle}
           </h2>
-          
+
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div>
@@ -372,6 +403,7 @@ const RSVPPage = () => {
             </div>
           </form>
         </div>
+        {/* End hidden form */}
 
         {/* Navigation to other pages */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mt-8">

@@ -72,7 +72,7 @@ const FAQPage = () => {
         },
         {
           question: "Can I bring a plus-one?",
-          answer: "Plus-ones are by invitation only. If you received an invitation that includes a guest, please fill out a separate RSVP for your guest.",
+          answer: "Plus-ones will be by invitation only. If you received an invitation that includes a guest, please fill out a separate RSVP for your guest.",
           category: "logistics"
         },
         {
@@ -152,7 +152,7 @@ const FAQPage = () => {
         },
         {
           question: "Puis-je amener un accompagnateur?",
-          answer: "Les accompagnateurs sont admis uniquement sur invitation. Si vous avez reçu une invitation incluant un invité, veuillez remplir un formulaire de réponse séparé pour votre invité.",
+          answer: "Les accompagnateurs seront admis uniquement sur invitation. Si vous avez reçu une invitation incluant un invité, veuillez remplir un formulaire de réponse séparé pour votre invité.",
           category: "logistics"
         },
         {
