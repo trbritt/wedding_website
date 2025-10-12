@@ -29,9 +29,9 @@ jobs:
 
       - name: Build project
         run: pnpm build
-#        env:
-#          # Set your domain for proper asset paths
-#          NEXT_PUBLIC_BASE_URL: https://tbritt.xyz
+        env:
+          # Set your domain for proper asset paths
+          NEXT_PUBLIC_BASE_URL: https://trbritt.github.io/wedding_website/
 
 
       - name: Upload production-ready build files
