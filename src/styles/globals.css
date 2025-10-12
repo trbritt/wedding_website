@@ -1,0 +1,331 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Local Font Face Definitions */
+@font-face {
+  font-family: 'Shango';
+  src: url('/fonts/Shango Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Recoleta';
+  src: url('/fonts/Recoleta Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Recoleta', Georgia, serif;
+  background-color: #181a1b;
+  color: #e8e6e3;
+  scroll-behavior: smooth;
+  /* Prevent horizontal overflow on mobile */
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Art Deco Typography with Shango font */
+.art-deco-heading {
+  font-family: 'Shango', 'Playfair Display', Georgia, serif;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  /* Improved line height for mobile readability */
+  line-height: 1.1;
+}
+
+/* Art Nouveau text with Recoleta font */
+.art-nouveau-text {
+  font-family: 'Recoleta', Georgia, serif;
+  font-size: 18px;
+  font-style: normal;
+  letter-spacing: 0.02em;
+  /* Better line height for mobile */
+  line-height: 1.4;
+}
+
+/* Additional typography classes for consistency */
+.font-shango {
+  font-family: 'Shango', 'Playfair Display', Georgia, serif;
+}
+
+.font-recoleta {
+  font-size: 16px;
+  font-family: 'Recoleta', Georgia, serif;
+}
+
+/* Custom Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(174, 190, 164, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(174, 190, 164, 0.8), 0 0 30px rgba(174, 190, 164, 0.6);
+  }
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* Reduce animation intensity on mobile for better performance */
+@media (max-width: 640px) {
+  .float {
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .glow {
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  
+  .shimmer {
+    animation: shimmer 3s infinite;
+  }
+}
+
+/* Art Deco Patterns with responsive sizing */
+.art-deco-bg {
+  /*background-image: */
+    /*linear-gradient(45deg, #aebea4 25%, transparent 25%),*/
+    /*linear-gradient(-45deg, #862733 25%, transparent 25%),*/
+    /*linear-gradient(45deg, transparent 75%, #af6a28 75%),*/
+    /*linear-gradient(-45deg, transparent 75%, #aebea4 75%);*/
+  background-size: 30px 30px;
+  background-position: 0 0, 0 15px, 15px -15px, -15px 0px;
+}
+
+/* Larger pattern on desktop */
+@media (min-width: 640px) {
+  .art-deco-bg {
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #aebea4;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #862733;
+}
+
+/* Larger scrollbar on desktop */
+@media (min-width: 640px) {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, textarea {
+  transition: all 0.3s ease;
+}
+
+/* Enhanced touch targets for mobile */
+@media (max-width: 640px) {
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Focus states for accessibility with better mobile support */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus {
+  outline: 2px solid #af6a28;
+  outline-offset: 2px;
+}
+
+/* Touch-friendly focus states */
+@media (max-width: 640px) {
+  button:focus,
+  a:focus,
+  input:focus,
+  textarea:focus {
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
+}
+
+/* Touch manipulation for better mobile experience */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Prevent text selection on decorative elements */
+.pointer-events-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Improved text rendering */
+.art-deco-heading,
+.art-nouveau-text,
+.font-shango,
+.font-recoleta {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
+  /* Reduce letter spacing on small screens */
+  .art-deco-heading {
+    letter-spacing: 0.05em;
+  }
+  
+  /* Prevent text overflow */
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  
+  /* Ensure proper spacing on mobile */
+  .px-8 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .float,
+  .glow,
+  .shimmer {
+    animation: none !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .art-deco-heading {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Increase opacity of decorative elements in high contrast */
+  .opacity-20 {
+    opacity: 0.4;
+  }
+  
+  .opacity-15 {
+    opacity: 0.3;
+  }
+}
+
+/* Improved focus indicators for keyboard navigation */
+@media (prefers-reduced-motion: no-preference) {
+  button:focus,
+  a:focus {
+    transform: scale(1.02);
+  }
+}
+
+/* Better mobile viewport handling */
+@supports (height: 100dvh) {
+  .min-h-screen {
+    min-height: 100dvh;
+  }
+}
+
+/* Safe area handling for mobile devices with notches */
+@supports (padding: max(0px)) {
+  .px-4 {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  
+  .py-8 {
+    padding-top: max(2rem, env(safe-area-inset-top));
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Font loading optimization */
+@media (prefers-reduced-data: reduce) {
+  @font-face {
+    font-display: optional;
+  }
+}
+
+.bg-image-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
