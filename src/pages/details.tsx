@@ -29,12 +29,12 @@ const DetailsPage = () => {
 
   const content = {
     en: {
-      title: "Wedding Reception",
+      title: "Wedding Details",
       subtitle: "Celebrate with us into the night",
       backHome: "← Back to Home",
       date: "Saturday, 12 September, 2026",
       time: "5:00 PM - Late",
-      location: "Bastide du Lussan",
+      location: "Bastide de Lussan",
       address: "D143 Route de Verfeuil, Lussan, France, 30580",
       details: "Reception Details",
       description: "Come back soon while we finalize the details.",
@@ -57,12 +57,12 @@ const DetailsPage = () => {
       transportDetails: "There are two options for accommodations: staying in Lussan which is accessible by foot, and allows you to celebrate as hard as you wish, or staying in Uzes, which is a 20min drive away. If you wish to stay in Lussan, we put together a list of accommodations available around the village. Kindly not that we encourage you to book them as soon as possible, because they will fill up. Most bookings have to vie done through the property’s website, although we also added some VRBO links."
     },
     fr: {
-      title: "Réception de Mariage",
+      title: "Détails de Mariage",
       subtitle: "Célébrez avec nous toute la nuit",
       backHome: "← Retour à l'accueil",
       date: "Samedi, 12 septembre, 2026",
       time: "17h00 - Tard",
-      location: "Bastide du Lussan",
+      location: "Bastide de Lussan",
       address: "D143 Route de Verfeuil, Lussan, France, 30580",
       details: "Détails de la Réception",
       description: "Revenez plus tard, nous finalisons les détails.",
@@ -76,7 +76,7 @@ const DetailsPage = () => {
         // { time: "00h00", event: "Dernière Danse" }
       ],
       cocktail: "Vin d'Honneur",
-      cocktailDescription: "Diverses animations et canapés pendant le vin d'honneur, ainsi que des boissons Lui ou Elle personalisés.",
+      cocktailDescription: "Diverses animations et canapés pendant le vin d'honneur, ainsi que des boissons Lui ou Elle personnalisées.",
       menu: "Menu du Dîner",
       menuDescription: "Notre chef a préparé un menu spécialement sélectionné mettant en vedette la cuisine française et provençale.",
       gifts: "Cadeaux et Liste de Mariage",
@@ -169,13 +169,31 @@ const DetailsPage = () => {
             <p className="font-recoleta text-lg text-gray-400 mb-4">{t.time}</p>
 
             <h3 className="font-shango text-xl sm:text-2xl mb-2" style={{ color: '#ecb179' }}>{t.location}</h3>
-            <p className="font-recoleta text-gray-400 mb-6">{t.address}</p>
-            
+            <p className="font-recoleta text-gray-400">{t.address}</p>
+            { language == "en" ? (
+                    <button
+                        className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
+                        onClick={() => {
+                          window.open(" https://bastidedelussan.fr/en/", '_blank', 'noopener,noreferrer')
+                        }}
+                    >
+                      Click here to see more of the Bastide.
+                    </button>
+            ) : (
+                <button
+                    className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
+                    onClick={() => {
+                      window.open(" https://bastidedelussan.fr/", '_blank', 'noopener,noreferrer')
+                    }}
+                >
+                 Cliquez ici pour plus de détails sur la Bastide.
+                </button>
+            )}
             <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-6">
               <div className="w-full h-full relative">
                 <ExportedImage
                     src={bastide_landscape}
-                    alt="Bastide du Lussan"
+                    alt="Bastide de Lussan"
                     fill
                     className="object-cover"
                     priority

@@ -44,7 +44,7 @@ const WeddingWelcome = () => {
       mainSubtitle: "Together Forever • September 12, 2026",
       placeholderAlt: "Wedding couple photo",
       ceremony: "About",
-      reception: "Reception",
+      reception: "Details",
       faq: "FAQ", 
       thingsToDo: "Things to Do",
       rsvp: "RSVP"
@@ -59,7 +59,7 @@ const WeddingWelcome = () => {
       mainSubtitle: "Ensemble Pour Toujours • 12 Septembre, 2026",
       placeholderAlt: "Photo du couple marié",
       ceremony: "À Propos",
-      reception: "Réception",
+      reception: "Détails",
       faq: "FAQ",
       thingsToDo: "Choses à Faire", 
       rsvp: "RSVP"

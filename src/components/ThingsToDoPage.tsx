@@ -196,7 +196,7 @@ const ThingsToDoPage = () => {
         },
         {
           name: "Pont du Gard",
-          description: "Chef-d'œuvre de l'ingénierie romaine classé au patrimoine mondial UNESCO et l'un des aqueducs antiques les mieux conservés au monde. Parfait pour les visites touristiques, visites guidées, baignade, pique-niques au bord de la rivière et exploration des sentiers et musée environnants.",
+          description: "Chef-d'œuvre de l'ingénierie romaine classé au patrimoine mondial UNESCO et l'un des aqueducs antiques les mieux conservés au monde. Parfait pour les visites touristiques, visites guidées, baignade, pique-niques au bord de la rivière et exploration des sentiers et musées environnants.",
           category: "culture",
           location: "35 minutes en voiture",
           duration: "Demi-journée",
@@ -206,7 +206,7 @@ const ThingsToDoPage = () => {
         },
         {
           name: "Gorges du Gardon",
-          description: "Réserve de biosphère UNESCO offrant une beauté naturelle pristine et des aventures en plein air. Profitez du kayak et de la baignade dans des eaux cristallines, de la randonnée à travers des paysages méditerranéens, plus l'escalade, le vélo et l'équitation.",
+          description: "Réserve de biosphère UNESCO offrant une beauté naturelle et des aventures en plein air. Profitez du kayak et de la baignade dans des eaux cristallines, de la randonnée à travers des paysages méditerranéens, plus l'escalade, le vélo et l'équitation.",
           category: "activities",
           location: "30 minutes en voiture",
           duration: "Demi-journée ou journée complète",
@@ -523,7 +523,7 @@ const ThingsToDoPage = () => {
                 <p className="font-recoleta text-gray-300 text-sm">
                   {language === 'en'
                     ? 'A car is recommended for exploring the region. Some sites are within walking distance or short drives from our venue.'
-                    : 'Une voiture est recommandée pour explorer la région. Certains de sites sont à distance de marche ou à courte distance en voiture de notre lieu.'
+                    : 'Une voiture est recommandée pour explorer la région. Certains sites sont à distance de marche ou à courte distance en voiture de notre lieu.'
                   }
                 </p>
               </div>
