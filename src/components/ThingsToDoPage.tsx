@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import React from 'react';
 import { StaticImageData } from "next/image";
 import ExportedImage from "next-image-export-optimizer";
-import ring from "/public/images/ring.jpg";
+import background from "/public/images/website_background.jpg";
 import village_de_lussan from "/public/images/village_de_lussan.jpg";
 import concluses_de_lussan from "/public/images/concluses_de_lussan.jpg";
 import pont_du_gard from "/public/images/pont_du_gard.jpg";
@@ -315,7 +315,7 @@ const ThingsToDoPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-dark-green-1 via-dark-green-2 to-dark-green-1 relative overflow-hidden">
       <div className="bg-image-wrapper">
         <ExportedImage
-            src={ring}
+            src={background}
             alt="test"
             fill
             className="object-cover"
@@ -379,7 +379,7 @@ const ThingsToDoPage = () => {
             <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-burgundy to-transparent" style={{ background: 'linear-gradient(to right, transparent, #862733, transparent)' }}></div>
           </div>
 
-          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-gray-300 font-light">
+          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-burgundy font-light">
             {t.subtitle}
           </p>
         </div>

@@ -107,7 +107,7 @@ const FAQPage = () => {
         },
         {
           question: "What hotels do you recommend?",
-          answer: "There are two options for accommodations: staying in Lussan which is accessible by foot, and allows you to celebrate as hard as you wish, or staying in Uzes, which is a 20min drive away. If you wish to stay in Lussan, we put together a list of accommodations available around the village. Kindly not that we encourage you to book them as soon as possible, because they will fill up. Most bookings have to vie done through the property’s website, although we also added some VRBO links.",
+          answer: "There are two options for accommodations: staying in Lussan which is accessible by foot, and allows you to celebrate as hard as you wish, or staying in Uzes, which is a 20min drive away. If you wish to stay in Lussan, we put together a list of accommodations available around the village. Kindly note that we encourage you to book them as soon as possible, because they will fill up. Most bookings have to be done through the property’s website, although we also added some VRBO links.",
           category: "travel"
         },
         {

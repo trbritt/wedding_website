@@ -4,8 +4,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import React from 'react';
 import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
-import arms from "/public/images/arms.jpg";
-import bastide_landscape from "/public/images/bastide_landscape.jpg";
+import bastide_landscape from "/public/images/bastide_map_annotated.png";
+import background from "/public/images/website_background.jpg";
 
 const DetailsPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,15 +37,15 @@ const DetailsPage = () => {
       location: "Bastide de Lussan",
       address: "D143 Route de Verfeuil, Lussan, France, 30580",
       details: "Reception Details",
-      description: "Come back soon while we finalize the details.",
+      description: "Following the ceremony, we invite you to join us in the cocktail area where the bar will officially open and passed canapés will be served. We've planned several high-end culinary experiences throughout the evening: live jambon carving, an oyster and salmon bar, bruschetta and fresh pasta stations. So lay back, mingle, savour the flavors, and perhaps even play a little pétanque under the Provençal sky.\n" +
+          "\nAs the sun sets, we'll gather in the courtyard for a seated dinner under the stars; a warm, delicious meal followed by a selection of French cheeses. After dinner, we'll share a few heartfelt speeches from our loved ones, cut the cake, and officially open the dance floor. Then it's time to celebrate until the early morning hours!",
       schedule: "Evening Schedule",
       scheduleItems: [
-        // { time: "6:00 PM", event: "Cocktail Hour & Canapés" },
-        // { time: "7:00 PM", event: "Welcome Speeches" },
-        // { time: "7:30 PM", event: "Dinner Service" },
-        // { time: "9:00 PM", event: "First Dance" },
-        // { time: "9:30 PM", event: "Dancing & Festivities" },
-        // { time: "12:00 AM", event: "Last Dance" }
+        { time: "5:00 PM", event: "Ceremony" },
+        { time: "6:00 PM", event: "Cocktails, Food, Entertainment" },
+        { time: "8:00 PM", event: "Dinner" },
+        { time: "10:30 PM", event: "Cake Cutting, Dessert" },
+        { time: "11:00 PM", event: "Dancing" }
       ],
       cocktail: "Cocktail Hour",
       cocktailDescription: "With various stations and canapés, as well as His or Her personalized drinks.",
@@ -65,15 +65,15 @@ const DetailsPage = () => {
       location: "Bastide de Lussan",
       address: "D143 Route de Verfeuil, Lussan, France, 30580",
       details: "Détails de la Réception",
-      description: "Revenez plus tard, nous finalisons les détails.",
+      description: "Après la cérémonie, nous vous invitons à nous rejoindre dans l'espace cocktail où le bar ouvrira officiellement et des canapés seront servis. Nous avons prévu plusieurs animations culinaires haut de gamme tout au long de la soirée : découpe de jambon en direct, bar à huîtres et saumon, ateliers bruschetta et raviolis frais. Détendez-vous, échangez, savourez les saveurs, et peut-être même jouez à la pétanque sous le ciel provençal.\n" +
+          "À la tombée de la nuit, nous nous rassemblerons dans la cour pour un dîner assis sous les étoiles; un repas chaud et délicieux suivi d'une sélection de fromages français. Après le dîner, nous partagerons quelques discours de nos proches, couperons le gâteau et ouvrirons officiellement la piste de danse. Place ensuite à la fête jusqu'au petit matin !",
       schedule: "Programme de la Soirée",
       scheduleItems: [
-        // { time: "18h00", event: "Cocktail et Canapés" },
-        // { time: "19h00", event: "Discours de Bienvenue" },
-        // { time: "19h30", event: "Service du Dîner" },
-        // { time: "21h00", event: "Première Danse" },
-        // { time: "21h30", event: "Danse et Festivités" },
-        // { time: "00h00", event: "Dernière Danse" }
+        { time: "5:00 PM", event: "Cérémonie" },
+        { time: "6:00 PM", event: "Cocktails et Canapés" },
+        { time: "8:00 PM", event: "Service du Dîner" },
+        { time: "10:30 PM", event: "Couper du Gâteau" },
+        { time: "11:00 PM", event: "Danse et Festivités" }
       ],
       cocktail: "Vin d'Honneur",
       cocktailDescription: "Diverses animations et canapés pendant le vin d'honneur, ainsi que des boissons Lui ou Elle personnalisées.",
@@ -92,7 +92,7 @@ const DetailsPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-dark-green-1 via-dark-green-2 to-dark-green-1 relative overflow-hidden">
       <div className="bg-image-wrapper">
         <ExportedImage
-            src={arms}
+            src={background}
             alt="test"
             fill
             className="object-cover"
@@ -156,7 +156,7 @@ const DetailsPage = () => {
             <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-sage-green to-transparent" style={{ background: 'linear-gradient(to right, transparent, #aebea4, transparent)' }}></div>
           </div>
           
-          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-gray-300 font-light">
+          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-burgundy font-light">
             {t.subtitle}
           </p>
         </div>
@@ -189,7 +189,7 @@ const DetailsPage = () => {
                  Cliquez ici pour plus de détails sur la Bastide.
                 </button>
             )}
-            <div className="h-48 bg-gray-200 rounded-lg flex items-center justify-center mb-6">
+            <div className="h-72 bg-gray-200 rounded-lg flex items-center justify-center mb-6">
               <div className="w-full h-full relative">
                 <ExportedImage
                     src={bastide_landscape}
@@ -197,7 +197,7 @@ const DetailsPage = () => {
                     fill
                     className="object-cover"
                     priority
-                    sizes="(max-width: 640px) 192px, (max-width: 1024px) 256px, 320px"
+                    sizes="(max-width: 800) 220px, (max-width: 1024px) 256px, 320px"
                 />
 
                 {/* Subtle overlay for better integration */}
@@ -211,88 +211,91 @@ const DetailsPage = () => {
             </p>
           </div>
 
-          {/* Schedule */}
-          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
-            <h3 className="font-shango text-xl sm:text-2xl mb-6" style={{ color: '#ecb179' }}>{t.schedule}</h3>
-            <div className="space-y-4">
-              <div className="text-xl sm:text-2xl mb-6 text-gray-300">
-                {language == "en" ? "Coming Soon..." : "Bientôt ..."}
+          <div className="grid lg:grid-cols-1 lg:grid-rows-3 gap-8 mb-8">
+            {/* Schedule */}
+            <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
+              <h3 className="font-shango text-xl sm:text-2xl mb-6" style={{ color: '#ecb179' }}>{t.schedule}</h3>
+              <div className="space-y-4">
+                <div className="text-xl sm:text-2xl mb-6 text-gray-300">
+                  {language == "en" ? "Timeline of events for the day of the wedding..." : "Bientôt ..."}
+                </div>
+                {t.scheduleItems.map((item, index) => (
+                    <div key={index} className="flex items-start gap-4 p-3 rounded-lg bg-gray-700/50 hover:bg-gray-700/70 transition-colors">
+                      <div className="bg-burnt-orange text-white px-3 py-1 rounded-full text-sm font-recoleta font-semibold whitespace-nowrap" style={{ backgroundColor: '#af6a28' }}>
+                        {item.time}
+                      </div>
+                      <div className="font-recoleta text-gray-300">
+                        {item.event}
+                      </div>
+                    </div>
+                ))}
               </div>
-              {/*{t.scheduleItems.map((item, index) => (*/}
-              {/*  <div key={index} className="flex items-start gap-4 p-3 rounded-lg bg-gray-700/50 hover:bg-gray-700/70 transition-colors">*/}
-              {/*    <div className="bg-burnt-orange text-white px-3 py-1 rounded-full text-sm font-recoleta font-semibold whitespace-nowrap" style={{ backgroundColor: '#af6a28' }}>*/}
-              {/*      {item.time}*/}
-              {/*    </div>*/}
-              {/*    <div className="font-recoleta text-gray-300">*/}
-              {/*      {item.event}*/}
-              {/*    </div>*/}
-              {/*  </div>*/}
-              {/*))}*/}
+            </div>
+            {/* Cocktail Hour - Left Side */}
+            <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
+              <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.cocktail}</h3>
+              <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
+                {t.cocktailDescription}
+              </p>
+
+              <div className="bg-gray-700/50 rounded-lg p-4">
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v4m0 0h-3m3 0h3M4 6l8 10m0 0l8-10M12 16V6M4 6h16" />
+                      <circle cx="12" cy="4" r="1" fill="currentColor" />
+                    </svg>
+                    <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Cocktails" : "Cocktails"}</p>
+                  </div>
+                  <div>
+                    <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+                      <ellipse cx="12" cy="8" rx="5" ry="2" fill="currentColor" opacity="0.3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c2.761 0 5-0.895 5-2s-2.239-2-5-2-5 0.895-5 2 2.239 2 5 2z" />
+                      <circle cx="8" cy="8" r="1.5" fill="currentColor" />
+                      <circle cx="12" cy="8" r="1.5" fill="currentColor" />
+                      <circle cx="16" cy="8" r="1.5" fill="currentColor" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M7 8v1c0 1.105 2.239 2 5 2s5-0.895 5-2V8M6 11l-2 10h16l-2-10" />
+                    </svg>
+                    <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Canapés" : "Canapés"}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Menu - Right Side with vertical spacing */}
+            <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2 flex flex-col justify-between" style={{ borderColor: '#4b5563' }}>
+              <div>
+                <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.menu}</h3>
+                <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
+                  {t.menuDescription}
+                </p>
+              </div>
+
+              <div className="bg-gray-700/50 rounded-lg p-4 mt-auto">
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.20-1.10-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
+                    </svg>
+                    <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "French Cuisine" : "Cuisine Française"}</p>
+                  </div>
+                  <div>
+                    <svg className="w-10 h-10 mx-auto mb-0 text-sage-green" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2 C 10 6, 6 10, 8 14 C 10 12, 14 12, 12 2 Z" fill="none" stroke="#aebea4" stroke-width="1.5"/>
+                      <circle cx="12" cy="12" r="3" fill="#aebea4"/>
+                    </svg>
+                    <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Provencal Cuisine" : "Cuisine Provençale"}</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Additional Information Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* Cocktail Hour - Left Side */}
-          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
-            <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.cocktail}</h3>
-            <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
-              {t.cocktailDescription}
-            </p>
-
-            <div className="bg-gray-700/50 rounded-lg p-4">
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v4m0 0h-3m3 0h3M4 6l8 10m0 0l8-10M12 16V6M4 6h16" />
-                    <circle cx="12" cy="4" r="1" fill="currentColor" />
-                  </svg>
-                  <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Cocktails" : "Cocktails"}</p>
-                </div>
-                <div>
-                  <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
-                    <ellipse cx="12" cy="8" rx="5" ry="2" fill="currentColor" opacity="0.3" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c2.761 0 5-0.895 5-2s-2.239-2-5-2-5 0.895-5 2 2.239 2 5 2z" />
-                    <circle cx="8" cy="8" r="1.5" fill="currentColor" />
-                    <circle cx="12" cy="8" r="1.5" fill="currentColor" />
-                    <circle cx="16" cy="8" r="1.5" fill="currentColor" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 8v1c0 1.105 2.239 2 5 2s5-0.895 5-2V8M6 11l-2 10h16l-2-10" />
-                  </svg>
-                  <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Canapés" : "Canapés"}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Menu - Right Side with vertical spacing */}
-          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2 flex flex-col justify-between" style={{ borderColor: '#4b5563' }}>
-            <div>
-              <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.menu}</h3>
-              <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
-                {t.menuDescription}
-              </p>
-            </div>
-
-            <div className="bg-gray-700/50 rounded-lg p-4 mt-auto">
-              <div className="grid grid-cols-2 gap-4 text-center">
-                <div>
-                  <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.20-1.10-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"/>
-                  </svg>
-                  <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "French Cuisine" : "Cuisine Française"}</p>
-                </div>
-                <div>
-                  <svg className="w-10 h-10 mx-auto mb-0 text-sage-green" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2 C 10 6, 6 10, 8 14 C 10 12, 14 12, 12 2 Z" fill="none" stroke="#aebea4" stroke-width="1.5"/>
-                    <circle cx="12" cy="12" r="3" fill="#aebea4"/>
-                  </svg>
-                  <p className="font-recoleta text-sm text-gray-400">{language == "en" ? "Provencal Cuisine" : "Cuisine Provençale"}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/*<div className="grid md:grid-cols-2 gap-8 mb-8">*/}
+        {/*  */}
+        {/*</div>*/}
 
         {/* Accommodation - Full width */}
         <div className="mb-8">
