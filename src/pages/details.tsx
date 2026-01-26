@@ -53,8 +53,28 @@ const DetailsPage = () => {
       menuDescription: "Our chef has prepared a specially selected menu showcasing French and Provençal cuisine.",
       gifts: "Gifts & Registry",
       giftsDetails: "Your presence is the greatest gift of all. For those who wish to honor us with a gift, we would greatly appreciate contributions to our honeymoon fund.",
-      transport: "Accommodation",
-      transportDetails: "There are two options for accommodations: staying in Lussan which is accessible by foot, and allows you to celebrate as hard as you wish, or staying in Uzes, which is a 20min drive away. If you wish to stay in Lussan, we put together a list of accommodations available around the village. Kindly not that we encourage you to book them as soon as possible, because they will fill up. Most bookings have to vie done through the property’s website, although we also added some VRBO links."
+      accommodation: "Accommodation",
+      accommodationDetails: "There are several options for accommodations near Bastide de Lussan. You can stay in Lussan itself (walking distance to the venue, perfect for celebrating as hard as you wish!), stay in nearby villages within 5–10 minutes' drive, or stay in Uzès, a beautiful town about 20 minutes away. We've put together a comprehensive list of ~30 options at all price points to help you find the perfect fit. ",
+      accommodationNote: "We strongly encourage you to book as soon as possible. September is peak season in Provence, and properties fill up quickly. Most accommodations require 2+ night minimum stays, which is standard for rural France. Most bookings must be done directly through the property's website or listing (VRBO, Airbnb, Booking.com). We've included direct links in the list.",
+      transportation: "Transportation",
+      gettingThereItems: [
+        {
+          title: "Getting to the Venue",
+          description: "Most accommodations are within a 10-minute drive of Bastide de Lussan."
+        },
+        {
+          title: "Car Rental",
+          description: "The venue is in rural Provence with limited public transport and taxi service. We strongly recommend renting a car for the weekend."
+        },
+        {
+          title: "Taxi Service",
+          description: "Taxi service in the area is limited. Closer to the wedding date, we'll send a survey to evaluate interest in arranging a shared taxi service for the evening to ensure everyone gets home safely. Stay tuned!"
+        },
+        {
+          title: "Nearest Airports",
+          description: "Marseille (MRS) — 1.5 hours, Lyon (LYS) — 2.5 hours, Nîmes (FNI) — 45 min (small regional airport, limited flights)"
+        }
+      ]
     },
     fr: {
       title: "Détails de Mariage",
@@ -81,8 +101,30 @@ const DetailsPage = () => {
       menuDescription: "Notre chef a préparé un menu spécialement sélectionné mettant en vedette la cuisine française et provençale.",
       gifts: "Cadeaux et Liste de Mariage",
       giftsDetails: "Votre présence est le plus grand cadeau de tous. Pour ceux qui souhaitent nous honorer avec un cadeau, nous apprécierions grandement les contributions à notre fonds de lune de miel.",
-      transport: "Logement",
-      transportDetails: "Il y a deux options d’hébergement : séjourner à Lussan, accessible à pied et qui vous permettra de faire la fête sans modération, ou à Uzès, situé à environ 20 minutes en voiture. Si vous souhaitez loger à Lussan, nous avons préparé une liste d’hébergements disponibles autour du village. Nous vous invitons à réserver dès que possible, car les places partent rapidement. La plupart des réservations doivent être effectuées directement sur le site web de l’établissement, mais nous avons également ajouté quelques liens VRBO."
+      accommodation: "Hébergement",
+      accommodationDetails: "Plusieurs options d’hébergement sont disponibles à proximité de la Bastide de Lussan.\n" +
+          "Vous pouvez loger directement à Lussan (à distance de marche du lieu, parfait pour faire la fête sans contrainte !), dans les villages voisins à 5–10 minutes en voiture, ou à Uzès, une très belle ville située à environ 20 minutes.\n" +
+          "Nous avons préparé une liste complète d’environ 30 hébergements, dans toutes les gammes de prix, pour vous aider à trouver l’option qui vous convient le mieux.",
+      accommodationNote: "Nous vous recommandons vivement de réserver le plus tôt possible. Septembre est une période de forte affluence en Provence et les hébergements se remplissent rapidement. La plupart des logements exigent un séjour minimum de 2 nuits, ce qui est courant en zone rurale en France. Les réservations doivent généralement se faire directement via le site de l’établissement ou via les plateformes (VRBO, Airbnb, Booking.com). Les liens directs sont inclus dans la liste.",
+      transportation: "Transportation",
+      gettingThereItems: [
+        {
+          title: "Accès au lieu",
+          description: "La majorité des hébergements se trouvent à moins de 10 minutes en voiture de la Bastide de Lussan."
+        },
+        {
+          title: "Location de voiture",
+          description: "Le lieu se situe en pleine campagne provençale, avec peu de transports en commun et peu de taxis. Nous vous recommandons fortement de louer une voiture pour le week-end."
+        },
+        {
+          title: "Taxis",
+          description: "Les services de taxi sont limités dans la région. À l’approche du mariage, nous enverrons un questionnaire afin d’évaluer l’intérêt pour la mise en place d’un service de taxi partagé le soir, pour que chacun puisse rentrer en toute sécurité. Restez à l’écoute !"
+        },
+        {
+          title: "Aéroports les plus proches",
+          description: "Marseille (MRS) — 1h30, Lyon (LYS) — 2h30, Nîmes (FNI) — 45 min (petit aéroport régional, vols limités)"
+        }
+      ]
     }
   };
 
@@ -171,14 +213,14 @@ const DetailsPage = () => {
             <h3 className="font-shango text-xl sm:text-2xl mb-2" style={{ color: '#ecb179' }}>{t.location}</h3>
             <p className="font-recoleta text-gray-400">{t.address}</p>
             { language == "en" ? (
-                    <button
-                        className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
-                        onClick={() => {
-                          window.open(" https://bastidedelussan.fr/en/", '_blank', 'noopener,noreferrer')
-                        }}
-                    >
-                      Click here to see more of the Bastide.
-                    </button>
+                <button
+                    className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
+                    onClick={() => {
+                      window.open(" https://bastidedelussan.fr/en/", '_blank', 'noopener,noreferrer')
+                    }}
+                >
+                  Click here to see more of the Bastide.
+                </button>
             ) : (
                 <button
                     className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
@@ -186,7 +228,7 @@ const DetailsPage = () => {
                       window.open(" https://bastidedelussan.fr/", '_blank', 'noopener,noreferrer')
                     }}
                 >
-                 Cliquez ici pour plus de détails sur la Bastide.
+                  Cliquez ici pour plus de détails sur la Bastide.
                 </button>
             )}
             <div className="h-72 bg-gray-200 rounded-lg flex items-center justify-center mb-6">
@@ -204,14 +246,14 @@ const DetailsPage = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
               </div>
             </div>
-            
+
             <h3 className="font-shango text-xl mb-4" style={{ color: '#ecb179' }}>{t.details}</h3>
-            <p className="font-recoleta text-gray-300 leading-relaxed">
+            <p className="font-recoleta text-gray-300 leading-relaxed whitespace-pre-line">
               {t.description}
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-1 lg:grid-rows-3 gap-8 mb-8">
+          <div className="space-y-8">
             {/* Schedule */}
             <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
               <h3 className="font-shango text-xl sm:text-2xl mb-6" style={{ color: '#ecb179' }}>{t.schedule}</h3>
@@ -263,15 +305,13 @@ const DetailsPage = () => {
             </div>
 
             {/* Menu - Right Side with vertical spacing */}
-            <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2 flex flex-col justify-between" style={{ borderColor: '#4b5563' }}>
-              <div>
-                <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.menu}</h3>
-                <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
-                  {t.menuDescription}
-                </p>
-              </div>
+            <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
+              <h3 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.menu}</h3>
+              <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
+                {t.menuDescription}
+              </p>
 
-              <div className="bg-gray-700/50 rounded-lg p-4 mt-auto">
+              <div className="bg-gray-700/50 rounded-lg p-4">
                 <div className="grid grid-cols-2 gap-4 text-center">
                   <div>
                     <svg className="w-8 h-8 mx-auto mb-2 text-sage-green" fill="currentColor" viewBox="0 0 24 24">
@@ -291,7 +331,6 @@ const DetailsPage = () => {
             </div>
           </div>
         </div>
-
         {/* Additional Information Grid */}
         {/*<div className="grid md:grid-cols-2 gap-8 mb-8">*/}
         {/*  */}
@@ -300,9 +339,9 @@ const DetailsPage = () => {
         {/* Accommodation - Full width */}
         <div className="mb-8">
           <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
-            <h4 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.transport}</h4>
+            <h4 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.accommodation}</h4>
             <p className="font-recoleta text-gray-300 leading-relaxed">
-              {t.transportDetails} <br/>
+              {t.accommodationDetails} <br/>
               <button
                   className="mt-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
                   // style={{ backgroundColor: '#aebea4', borderColor: '#aebea4' }}
@@ -313,6 +352,55 @@ const DetailsPage = () => {
                 {language == "en" ? "Click here for a list of recommended stays." : "Cliquez ici pour une liste des séjours recommandés."}
               </button>
             </p>
+            <br/>
+            <h5 className="font-shango text-xl sm:text-2xl mb-4 inline-flex items-center gap-3" style={{ color: '#ecb179' }}>
+              <span className="relative inline-flex items-center justify-center">
+                <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                >
+                  <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="#af6a28"
+                      strokeWidth="2"
+                      fill="none"
+                      className="animate-ping absolute opacity-75"
+                  />
+                  <circle cx="12" cy="12" r="10" stroke="#af6a28" strokeWidth="2" fill="rgba(175, 106, 40, 0.1)"/>
+                  <line x1="12" y1="7" x2="12" y2="13" stroke="#af6a28" strokeWidth="2.5" strokeLinecap="round"/>
+                  <circle cx="12" cy="16" r="1" fill="#af6a28"/>
+                </svg>
+              </span>
+              Important
+            </h5>
+            <p className="font-recoleta text-gray-300 leading-relaxed">
+              {t.accommodationNote}
+            </p>
+          </div>
+        </div>
+
+        {/* Transportation - Full width */}
+        <div className="mb-8">
+          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
+            <h4 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.transportation}</h4>
+            <div className="space-y-6">
+              {t.gettingThereItems.map((item, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center text-white font-recoleta font-bold" style={{ backgroundColor: '#af6a28' }}>
+                      {index + 1}
+                    </div>
+                    <div className="flex-1">
+                      <h5 className="font-shango text-lg mb-2 text-gray-200">{item.title}</h5>
+                      <p className="font-recoleta text-gray-300 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+              ))}
+            </div>
           </div>
         </div>
 
