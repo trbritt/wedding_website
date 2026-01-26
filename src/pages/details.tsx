@@ -231,19 +231,19 @@ const DetailsPage = () => {
                   Cliquez ici pour plus de détails sur la Bastide.
                 </button>
             )}
-            <div className="h-72 bg-gray-200 rounded-lg flex items-center justify-center mb-6">
-              <div className="w-full h-full relative">
+            <div className="w-full bg-gray-200 rounded-lg overflow-hidden mb-6">
+              <div className="w-full relative aspect-[16/9] sm:aspect-[4/3] lg:aspect-[16/9]">
                 <ExportedImage
                     src={bastide_landscape}
                     alt="Bastide de Lussan"
                     fill
-                    className="object-cover"
+                    className="object-cover rounded-lg"
                     priority
-                    sizes="(max-width: 800) 220px, (max-width: 1024px) 256px, 320px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
                 />
 
                 {/* Subtle overlay for better integration */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none rounded-lg"></div>
               </div>
             </div>
 
