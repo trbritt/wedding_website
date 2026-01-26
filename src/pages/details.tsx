@@ -80,7 +80,7 @@ const DetailsPage = () => {
       title: "Détails de Mariage",
       subtitle: "Célébrez avec nous toute la nuit",
       backHome: "← Retour à l'accueil",
-      date: "Samedi, 12 septembre, 2026",
+      date: "Samedi 12 septembre 2026",
       time: "17h00 - Tard",
       location: "Bastide de Lussan",
       address: "D143 Route de Verfeuil, Lussan, France, 30580",
@@ -206,51 +206,54 @@ const DetailsPage = () => {
         {/* Event Information Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-8">
           {/* Venue & Basic Info */}
-          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
-            <h2 className="font-shango text-2xl sm:text-3xl mb-4 text-gray-200">{t.date}</h2>
-            <p className="font-recoleta text-lg text-gray-400 mb-4">{t.time}</p>
+          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl border-2" style={{ borderColor: '#4b5563' }}>
+            <div className="p-6 sm:p-8">
+              <h2 className="font-shango text-2xl sm:text-3xl mb-4 text-gray-200">{t.date}</h2>
+              <p className="font-recoleta text-lg text-gray-400 mb-4">{t.time}</p>
 
-            <h3 className="font-shango text-xl sm:text-2xl mb-2" style={{ color: '#ecb179' }}>{t.location}</h3>
-            <p className="font-recoleta text-gray-400">{t.address}</p>
-            { language == "en" ? (
-                <button
-                    className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
-                    onClick={() => {
-                      window.open(" https://bastidedelussan.fr/en/", '_blank', 'noopener,noreferrer')
-                    }}
-                >
-                  Click here to see more of the Bastide.
-                </button>
-            ) : (
-                <button
-                    className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
-                    onClick={() => {
-                      window.open(" https://bastidedelussan.fr/", '_blank', 'noopener,noreferrer')
-                    }}
-                >
-                  Cliquez ici pour plus de détails sur la Bastide.
-                </button>
-            )}
-            <div className="w-full bg-gray-200 rounded-lg overflow-hidden mb-6">
-              <div className="w-full relative aspect-[16/9] sm:aspect-[4/3] lg:aspect-[16/9]">
-                <ExportedImage
-                    src={bastide_landscape}
-                    alt="Bastide de Lussan"
-                    fill
-                    className="object-cover rounded-lg"
-                    priority
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
-                />
-
-                {/* Subtle overlay for better integration */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none rounded-lg"></div>
-              </div>
+              <h3 className="font-shango text-xl sm:text-2xl mb-2" style={{ color: '#ecb179' }}>{t.location}</h3>
+              <p className="font-recoleta text-gray-400">{t.address}</p>
+              { language == "en" ? (
+                  <button
+                      className="mt-2 mb-2 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
+                      onClick={() => {
+                        window.open(" https://bastidedelussan.fr/en/", '_blank', 'noopener,noreferrer')
+                      }}
+                  >
+                    Click here to see more of the Bastide.
+                  </button>
+              ) : (
+                  <button
+                      className="mt-2 mb-6 transition-all duration-300 shadow-md min-h-[22px] touch-manipulation font-recoleta font-semibold text-sm rounded-lg hover:bg-opacity-90"
+                      onClick={() => {
+                        window.open(" https://bastidedelussan.fr/", '_blank', 'noopener,noreferrer')
+                      }}
+                  >
+                    Cliquez ici pour plus de détails sur la Bastide.
+                  </button>
+              )}
             </div>
 
-            <h3 className="font-shango text-xl mb-4" style={{ color: '#ecb179' }}>{t.details}</h3>
-            <p className="font-recoleta text-gray-300 leading-relaxed whitespace-pre-line">
-              {t.description}
-            </p>
+            {/* Image - full width, no padding */}
+            <div className="relative w-full mb-6 flex justify-center">
+              <ExportedImage
+                  src={bastide_landscape}
+                  alt="Bastide de Lussan"
+                  className="w-[90%] h-auto rounded-lg"
+                  priority
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+              />
+
+              {/* Subtle overlay for better integration */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
+            </div>
+
+            <div className="px-6 sm:px-8 pb-6 sm:pb-8">
+              <h3 className="font-shango text-xl mb-4" style={{ color: '#ecb179' }}>{t.details}</h3>
+              <p className="font-recoleta text-gray-300 leading-relaxed whitespace-pre-line">
+                {t.description}
+              </p>
+            </div>
           </div>
 
           <div className="space-y-8">
@@ -258,9 +261,6 @@ const DetailsPage = () => {
             <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
               <h3 className="font-shango text-xl sm:text-2xl mb-6" style={{ color: '#ecb179' }}>{t.schedule}</h3>
               <div className="space-y-4">
-                <div className="text-xl sm:text-2xl mb-6 text-gray-300">
-                  {language == "en" ? "Timeline of events for the day of the wedding..." : "Bientôt ..."}
-                </div>
                 {t.scheduleItems.map((item, index) => (
                     <div key={index} className="flex items-start gap-4 p-3 rounded-lg bg-gray-700/50 hover:bg-gray-700/70 transition-colors">
                       <div className="bg-burnt-orange text-white px-3 py-1 rounded-full text-sm font-recoleta font-semibold whitespace-nowrap" style={{ backgroundColor: '#af6a28' }}>
