@@ -290,7 +290,7 @@ const WeddingWelcome = () => {
           <p className="text-base sm:text-lg text-gray-400 max-w-md mx-auto leading-relaxed px-4 font-recoleta">
             Join us in celebrating our love story
             <br />
-            Joignez-vous à nous pour célébrer notre histoire d'amour
+            Joignez-vous à nous pour célébrer notre histoire d&#39;amour
           </p>
         </div>
 

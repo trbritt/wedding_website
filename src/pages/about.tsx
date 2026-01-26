@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import React from 'react';
 import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
-import sunbeams from "/public/images/sunbeams.jpg";
+import background from "/public/images/website_background.jpg";
 
 const CeremonyPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -32,7 +32,7 @@ const CeremonyPage = () => {
       subtitle: "Join us as we say 'I Do'",
       backHome: "← Back to Home",
       details: "A Wedding with French & Anglo Traditions",
-      description: "Our wedding is a celebration of two rich cultures coming together: Anaïs' French heritage and Tristan's British-American background. We've thoughtfully blended elements from both traditions to create a celebration that honors our roots while feeling uniquely ours. This guide will help you know what to expect and how to join us in making this day truly special.",
+      description: "Our wedding is a celebration of two rich cultures coming together: Anaïs' French heritage and Tristan's British-American background. We've thoughtfully blended elements from both traditions to create a celebration that honours our roots while feeling uniquely ours. This guide will help you know what to expect and how to join us in making this day truly special.",
       attire: "Dress Code",
       attireDetails: "Formal attire requested. Ladies, please avoid wearing white or ivory. Gentlemen, dark suits preferred.",
       parking: "Parking Information",
@@ -41,13 +41,13 @@ const CeremonyPage = () => {
       accessibilityDetails: "The cathedral is fully wheelchair accessible with elevator access to all levels.",
       cultural_traditions: "Cultural Traditions We're Blending",
       weddingPartyTitle: "Wedding Party",
-      weddingPartyText: "Reflecting the American tradition, we'll have a wedding party with bridesmaids and groomsmen: dear friends and family who have supported us throughout our journey. In France, the equivalent is a group of témoins (witnesses), who serve as legal witnesses and often assist with planning, but without the coordinated attire or extended ceremonial roles. To honor French tradition, our wedding party has no hierarchy: no 'best man' or 'maid of honor.' Each member holds equal importance in our hearts and in the celebration. They'll serve in both symbolic and celebratory capacities, witnessing our vows and helping us celebrate.",
+      weddingPartyText: "Reflecting the American tradition, we'll have a wedding party with bridesmaids and groomsmen: dear friends and family who have supported us throughout our journey. In France, the equivalent is a group of témoins (witnesses), who serve as legal witnesses and often assist with planning, but without the coordinated attire or extended ceremonial roles. To honour French tradition, our wedding party has no hierarchy: no 'best man' or 'maid of honor.' Each member holds equal importance in our hearts and in the celebration. They'll serve in both symbolic and celebratory capacities, witnessing our vows and helping us celebrate.",
       receptionTitle: "Reception Invitation",
-      receptionText: "French weddings often have tiered invitations: some guests attend only the vin d'honneur (post-ceremony cocktail), while others are invited to the full dinner reception. We've chosen the American approach: everyone invited to our wedding is invited to the entire celebration, from ceremony through the late-night dancing. We want to share every moment of this special day with all of you.",
+      receptionText: "French weddings often have tiered invitations: some guests attend only the vin d'honneur (post-ceremony cocktail), while others are invited to the full dinner reception. We've chosen the American approach: everyone invited to our wedding is invited to the entire celebration, from ceremony through the late-night dancing. We want to share every moment of this special day with all of you. Everyone is also welcome to the post-wedding brunch on the Sunday morning.",
       dancingTitle: "Dancing Into The Night",
       dancingText: "True to French tradition, our celebration will continue well into the early morning hours. The party begins after dinner with plenty of dancing, and we'll be right there celebrating with you, no early exits for the newlyweds! Our DJs will play a carefully curated mix of French classics, American favorites, and music designed to keep the dance floor alive until the very last song.",
       giftTitle: "Gifts & Registry",
-      giftText: "French weddings traditionally do not include bridal showers, focusing instead on the wedding celebration itself. We've chosen to follow this custom. Your presence, especially for those traveling from afar, is truly the greatest gift we could ask for. If you wish to honor us with a gift, you're warmly invited to contribute to our honeymoon fund, but please know that your presence at the wedding is more than enough.",
+      giftText: "French weddings traditionally do not include bridal showers, focusing instead on the wedding celebration itself. We've chosen to follow this custom. Your presence, especially for those traveling from afar, is truly the greatest gift we could ask for. If you wish to honour us with a gift, you're warmly invited to contribute to our honeymoon fund, but please know that your presence at the wedding is more than enough.",
       conclusionText: "This wedding represents not just the union of two people, but the beautiful blending of two cultures, two families, and two communities we love dearly. Every tradition we've chosen—whether French, British, American, or uniquely ours—has been selected to honor the love and support you've shown us. We can't wait to celebrate with you and create memories that will last a lifetime. Thank you for being part of our story.",
     },
     fr: {
@@ -81,7 +81,7 @@ const CeremonyPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-dark-green-1 via-dark-green-2 to-dark-green-1 relative overflow-hidden">
       <div className="bg-image-wrapper">
         <ExportedImage
-            src={sunbeams}
+            src={background}
             alt="test"
             fill
             className="object-cover"
@@ -147,7 +147,7 @@ const CeremonyPage = () => {
             <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-burgundy to-transparent" style={{ background: 'linear-gradient(to right, transparent, #862733, transparent)' }}></div>
           </div>
           
-          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-gray-300 font-light">
+          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-burgundy font-light">
             {t.subtitle}
           </p>
         </div>
