@@ -156,7 +156,7 @@ const CeremonyPage = () => {
         <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 mb-8 border-2" style={{ borderColor: '#4b5563' }}>
           <div className="grid md:grid-cols-1 gap-8">
             <div>
-              <h2 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#af6a28' }}>{t.details}</h2>
+              <h2 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.details}</h2>
               <p className="font-recoleta text-gray-300 leading-relaxed mb-6">
                 {t.description}
               </p>

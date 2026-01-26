@@ -133,7 +133,7 @@ const FAQPage = () => {
               "Taxi Service: Taxi service in the area is limited. Closer to the wedding date, we'll send a survey to evaluate interest in arranging a shared taxi service for the evening to ensure everyone gets home safely. Stay tuned! \n" +
               "Nearest Airports: \n" +
               "• Marseille (MRS) — 1.5 hours\n • Lyon (LYS) — 2.5 hours \n• Nîmes (FNI) — 45 min (small regional airport, limited flights)",
-          category: "logistics"
+          category: "travel"
         },
         {
           question: "Will the wedding be in English or French?",
@@ -265,7 +265,7 @@ const FAQPage = () => {
               "•Marseille (MRS) — 1h30\n" +
               "•Lyon (LYS) — 2h30\n" +
               "•Nîmes (FNI) — 45 min (petit aéroport régional, vols limités)",
-          category: "logistics"
+          category: "travel"
         },
         {
           question: "À quelle heure faut-il manger avant la cérémonie ?",
