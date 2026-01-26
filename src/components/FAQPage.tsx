@@ -427,7 +427,7 @@ const FAQPage = () => {
 
               <div className={`transition-all duration-300 ease-in-out ${
                 openItems.includes(index)
-                  ? 'max-h-96 opacity-100'
+                  ? 'max-h-180 opacity-100'
                   : 'max-h-0 opacity-0'
               } overflow-hidden`}>
                 <div className="px-4 sm:px-6 pb-4 sm:pb-5 pt-2">
