@@ -163,28 +163,28 @@ const CeremonyPage = () => {
 
               <div className="space-y-6 mb-6">
                 <div>
-                  <h3 className="font-shango text-xl mb-2" style={{ color: '#af6a28' }}>{t.cultural_traditions}</h3>
+                  <h3 className="font-shango text-xl mb-2" style={{ color: '#ecb179' }}>{t.cultural_traditions}</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-shango text-lg mb-2" style={{ color: '#af6a28' }}>{t.weddingPartyTitle}</h4>
+                      <h4 className="font-shango text-lg mb-2" style={{ color: '#ecb179' }}>{t.weddingPartyTitle}</h4>
                       <p className="font-recoleta text-lg text-gray-300 text-sm leading-relaxed">
                         {t.weddingPartyText}
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-shango text-lg mb-2" style={{ color: '#af6a28' }}>{t.receptionTitle}</h4>
+                      <h4 className="font-shango text-lg mb-2" style={{ color: '#ecb179' }}>{t.receptionTitle}</h4>
                       <p className="font-recoleta text-gray-300 text-sm leading-relaxed">
                         {t.receptionText}
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-shango text-lg mb-2" style={{ color: '#af6a28' }}>{t.dancingTitle}</h4>
+                      <h4 className="font-shango text-lg mb-2" style={{ color: '#ecb179' }}>{t.dancingTitle}</h4>
                       <p className="font-recoleta text-gray-300 text-sm leading-relaxed">
                         {t.dancingText}
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-shango text-lg mb-2" style={{ color: '#af6a28' }}>{t.giftTitle}</h4>
+                      <h4 className="font-shango text-lg mb-2" style={{ color: '#ecb179' }}>{t.giftTitle}</h4>
                       <p className="font-recoleta text-gray-300 text-sm leading-relaxed">
                         {t.giftText}
                       </p>
