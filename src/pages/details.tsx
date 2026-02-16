@@ -74,7 +74,10 @@ const DetailsPage = () => {
           title: "Nearest Airports",
           description: "Marseille (MRS) — 1.5 hours, Lyon (LYS) — 2.5 hours, Nîmes (FNI) — 45 min (small regional airport, limited flights)"
         }
-      ]
+      ],
+      sunday: "Sunday, 13 September, 2026",
+      sundaySubtitle: "Farewell Brunch",
+      sundayDescription: "Join us from 11:00 am to 2:00 pm for a farewell brunch at Bastide! Pastries from the local bakery, coffee, juice, and leftovers from Saturday’s feast will be waiting. Bring a bathing suit if you want to enjoy the pool and hang out together one final time before heading off."
     },
     fr: {
       title: "Détails de Mariage",
@@ -124,7 +127,10 @@ const DetailsPage = () => {
           title: "Aéroports les plus proches",
           description: "Marseille (MRS) — 1h30, Lyon (LYS) — 2h30, Nîmes (FNI) — 45 min (petit aéroport régional, vols limités)"
         }
-      ]
+      ],
+      sunday: "Dimanche, 13 September, 2026",
+      sundaySubtitle: "Brunch d'au Revoir",
+      sundayDescription: "Rejoignez-nous de 11h à 14h pour un brunch d’au revoir à la Bastide ! Des viennoiseries de la boulangerie locale, du café, des jus et les restes du festin de samedi vous attendent. Apportez votre maillot de bain si vous souhaitez profiter de la piscine et passer un dernier moment ensemble avant de partir."
     }
   };
 
@@ -335,6 +341,16 @@ const DetailsPage = () => {
         {/*<div className="grid md:grid-cols-2 gap-8 mb-8">*/}
         {/*  */}
         {/*</div>*/}
+        {/* Sunday brunch - Full width */}
+        <div className="mb-8">
+          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-xl p-6 sm:p-8 border-2" style={{ borderColor: '#4b5563' }}>
+            <h4 className="font-shango text-2xl sm:text-3xl mb-4 text-gray-200">{t.sunday}</h4>
+            <h4 className="font-shango text-xl sm:text-2xl mb-4" style={{ color: '#ecb179' }}>{t.sundaySubtitle}</h4>
+            <p className="font-recoleta text-gray-300 leading-relaxed">
+              {t.sundayDescription}
+            </p>
+          </div>
+        </div>
 
         {/* Accommodation - Full width */}
         <div className="mb-8">
