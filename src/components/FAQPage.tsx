@@ -5,6 +5,7 @@ import React from 'react';
 import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
 import background from "/public/images/website_background.jpg";
+import outfits from "/public/images/outfits.png";
 
 const FAQPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -449,6 +450,7 @@ const FAQPage = () => {
                   ) : (
                       <div/>
                   )}
+                  { /* RSVP link*/}
                   {
                     (index == 18 || (selectedCategory == 'logistics' && index == 7)) ? (
                         <button
@@ -464,6 +466,18 @@ const FAQPage = () => {
                         <div/>
                     )
                   }
+                  {(index == 3 || (selectedCategory == 'attire' && index == 0)) ? (
+                      <div className="px-4 sm:px-6 pb-2 mt-2">
+                        <ExportedImage
+                            src={outfits}
+                            alt={language === 'en' ? 'Outfit inspiration' : 'Inspiration tenue'}
+                            width={800}
+                            height={600}
+                            className="w-full rounded-lg"
+                            style={{ padding: '0 8px' }}
+                        />
+                      </div>
+                  ) : (<div/>)}
                 </div>
               </div>
             </div>
