@@ -5,6 +5,8 @@ import React from 'react';
 import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
 import background from "/public/images/website_background.jpg";
+import outfits from "/public/images/outfits.png";
+import donate_qr from "/public/images/donate_qr.png";
 
 const FAQPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -449,6 +451,7 @@ const FAQPage = () => {
                   ) : (
                       <div/>
                   )}
+                  { /* RSVP link*/}
                   {
                     (index == 18 || (selectedCategory == 'logistics' && index == 7)) ? (
                         <button
@@ -464,6 +467,68 @@ const FAQPage = () => {
                         <div/>
                     )
                   }
+                  {(faq.question === "What should I wear?" || faq.question === "Que dois-je porter?") && (
+                    <div className="pb-2 mt-2">
+                      <ExportedImage
+                        src={outfits}
+                        alt={language === 'en' ? 'Outfit inspiration' : 'Inspiration tenue'}
+                        width={800}
+                        height={600}
+                        className="w-full rounded-lg"
+                        style={{ padding: '0 8px' }}
+                      />
+                    </div>
+                  )}
+                  {(faq.question === "Do you have a gift registry?" || faq.question === "Avez-vous une liste de cadeaux?") && (
+                    <div className="mt-6 flex flex-col sm:flex-row gap-6 items-center justify-center">
+                      <div className="flex flex-col items-center gap-3 text-center">
+                        <p className="font-shango text-sm tracking-widest uppercase" style={{ color: '#ecb179' }}>
+                          {language === 'en' ? 'Donate Online' : 'Faire un Don en Ligne'}
+                        </p>
+                        <form action="https://www.paypal.com/donate" method="post" target="_top">
+                          <input type="hidden" name="business" value="CXNWCJJ5ZJ7NW" />
+                          <input type="hidden" name="no_recurring" value="1" />
+                          <input type="hidden" name="item_name" value="Thank you for wanting to contribute to the honeymoon fund! We are very grateful and appreciative of your gift." />
+                          <input type="hidden" name="currency_code" value="CAD" />
+                          <button
+                            type="submit"
+                            className="px-6 py-3 border-2 transition-all duration-300 shadow-lg hover:shadow-xl touch-manipulation font-recoleta font-semibold text-sm cursor-pointer hover:opacity-90"
+                            style={{ borderColor: '#af6a28', backgroundColor: 'rgba(175, 106, 40, 0.22)', color: '#e8d5c0' }}
+                          >
+                            <span className="flex items-center gap-2">
+                              <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                              </svg>
+                              {language === 'en' ? 'Contribute to Our Honeymoon Fund' : 'Contribuer à Notre Lune de Miel'}
+                            </span>
+                          </button>
+                          <img alt="" style={{ border: 0, display: 'none' }} src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width={1} height={1} />
+                        </form>
+                      </div>
+
+                      <div className="hidden sm:flex flex-col items-center gap-2 self-center">
+                        <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom, transparent, #6b7280)' }}></div>
+                        <span className="font-shango text-sm tracking-widest" style={{ color: '#9ca3af' }}>OR</span>
+                        <div className="w-px h-8" style={{ background: 'linear-gradient(to top, transparent, #6b7280)' }}></div>
+                      </div>
+
+                      <div className="flex flex-col items-center gap-3 text-center">
+                        <p className="font-shango text-sm tracking-widest uppercase" style={{ color: '#aebea4' }}>
+                          {language === 'en' ? 'Scan to Donate' : 'Scanner pour faire un don'}
+                        </p>
+                        <div className="p-2 rounded-lg" style={{ backgroundColor: 'white', boxShadow: '0 0 0 2px rgba(174,190,164,0.5)' }}>
+                          <ExportedImage
+                            src={donate_qr}
+                            alt="PayPal Donation QR Code"
+                            width={120}
+                            height={120}
+                            className="block"
+                            sizes="120px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
