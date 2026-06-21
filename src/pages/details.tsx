@@ -6,6 +6,7 @@ import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
 import bastide_landscape from "/public/images/bastide_map_annotated.png";
 import background from "/public/images/website_background.jpg";
+import donate_qr from "/public/images/donate_qr.png";
 
 const DetailsPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -53,6 +54,9 @@ const DetailsPage = () => {
       menuDescription: "Our chef has prepared a specially selected menu showcasing French and Provençal cuisine.",
       gifts: "Gifts & Registry",
       giftsDetails: "Your presence is the greatest gift of all. For those who wish to honor us with a gift, we would greatly appreciate contributions to our honeymoon fund.",
+      donateOnline: "Donate Online",
+      donateButton: "Contribute to Our Honeymoon Fund",
+      donateQR: "Scan to donate",
       accommodation: "Accommodation",
       accommodationDetails: "There are several options for accommodations near Bastide de Lussan. You can stay in Lussan itself (walking distance to the venue, perfect for celebrating as hard as you wish!), stay in nearby villages within 5–10 minutes' drive, or stay in Uzès, a beautiful town about 20 minutes away. We've put together a comprehensive list of ~30 options at all price points to help you find the perfect fit. ",
       accommodationNote: "We strongly encourage you to book as soon as possible. September is peak season in Provence, and properties fill up quickly. Most accommodations require 2+ night minimum stays, which is standard for rural France. Most bookings must be done directly through the property's website or listing (VRBO, Airbnb, Booking.com). We've included direct links in the list.",
@@ -104,6 +108,9 @@ const DetailsPage = () => {
       menuDescription: "Notre chef a préparé un menu spécialement sélectionné mettant en vedette la cuisine française et provençale.",
       gifts: "Cadeaux et Liste de Mariage",
       giftsDetails: "Votre présence est le plus grand cadeau de tous. Pour ceux qui souhaitent nous honorer avec un cadeau, nous apprécierions grandement les contributions à notre fonds de lune de miel.",
+      donateOnline: "Faire un Don en Ligne",
+      donateButton: "Contribuer à Notre Lune de Miel",
+      donateQR: "Scanner pour faire un don",
       accommodation: "Hébergement",
       accommodationDetails: "Plusieurs options d’hébergement sont disponibles à proximité de la Bastide de Lussan.\n" +
           "Vous pouvez loger directement à Lussan (à distance de marche du lieu, parfait pour faire la fête sans contrainte !), dans les villages voisins à 5–10 minutes en voiture, ou à Uzès, une très belle ville située à environ 20 minutes.\n" +
@@ -349,6 +356,93 @@ const DetailsPage = () => {
             <p className="font-recoleta text-gray-300 leading-relaxed">
               {t.sundayDescription}
             </p>
+          </div>
+        </div>
+
+        {/* Gifts & Honeymoon Fund - Full width */}
+        <div className="mb-8">
+          <div className="bg-dark-burgundy/70 backdrop-blur-sm rounded-lg shadow-2xl border-2 overflow-hidden" style={{ borderColor: '#af6a28' }}>
+            {/* Accent stripe */}
+            <div className="h-1 w-full" style={{ background: 'linear-gradient(to right, #862733, #af6a28, #aebea4, #af6a28, #862733)' }}></div>
+
+            <div className="p-6 sm:p-10">
+              {/* Centered header with art deco separators */}
+              <div className="text-center mb-8">
+                <div className="flex items-center justify-center mb-5">
+                  <div className="w-16 sm:w-24 h-0.5" style={{ background: 'linear-gradient(to right, transparent, #af6a28)' }}></div>
+                  <div className="mx-4 w-3 h-3 rotate-45 border-2 animate-pulse" style={{ borderColor: '#af6a28' }}></div>
+                  <div className="w-16 sm:w-24 h-0.5" style={{ background: 'linear-gradient(to left, transparent, #af6a28)' }}></div>
+                </div>
+                <h4 className="font-shango text-2xl sm:text-3xl md:text-4xl mb-5 tracking-wider" style={{ color: '#ecb179' }}>{t.gifts}</h4>
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-16 sm:w-24 h-0.5" style={{ background: 'linear-gradient(to right, transparent, #aebea4)' }}></div>
+                  <div className="mx-4 w-2 h-2 rotate-45 border" style={{ borderColor: '#aebea4' }}></div>
+                  <div className="w-16 sm:w-24 h-0.5" style={{ background: 'linear-gradient(to left, transparent, #aebea4)' }}></div>
+                </div>
+                <p className="font-recoleta text-gray-300 leading-relaxed max-w-2xl mx-auto text-base sm:text-lg">
+                  {t.giftsDetails}
+                </p>
+              </div>
+
+              {/* Two donation options — natural height, centered */}
+              <div className="flex flex-col md:flex-row gap-6 items-center justify-center mt-8">
+
+                {/* PayPal column */}
+                <div className="flex flex-col items-center gap-4 text-center">
+                  <p className="font-shango text-base tracking-widest uppercase" style={{ color: '#ecb179' }}>{t.donateOnline}</p>
+                  <form action="https://www.paypal.com/donate" method="post" target="_top">
+                    <input type="hidden" name="business" value="CXNWCJJ5ZJ7NW" />
+                    <input type="hidden" name="no_recurring" value="1" />
+                    <input type="hidden" name="item_name" value="Thank you for wanting to contribute to the honeymoon fund! We are very grateful and appreciative of your gift." />
+                    <input type="hidden" name="currency_code" value="CAD" />
+                    <button
+                      type="submit"
+                      className="px-8 py-4 border-2 transition-all duration-300 shadow-lg hover:shadow-xl min-h-[52px] touch-manipulation font-recoleta font-semibold text-base cursor-pointer hover:opacity-90 active:scale-95"
+                      style={{ borderColor: '#af6a28', backgroundColor: 'rgba(175, 106, 40, 0.22)', color: '#e8d5c0' }}
+                    >
+                      <span className="flex items-center gap-2">
+                        <svg className="w-4 h-4 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                        {t.donateButton}
+                      </span>
+                    </button>
+                    <img alt="" style={{ border: 0, display: 'none' }} src="https://www.paypal.com/en_CA/i/scr/pixel.gif" width={1} height={1} />
+                  </form>
+                </div>
+
+                {/* OR divider */}
+                <div className="hidden md:flex flex-col items-center gap-2 self-center px-4">
+                  <div className="w-px h-8" style={{ background: 'linear-gradient(to bottom, transparent, #6b7280)' }}></div>
+                  <span className="font-shango text-base tracking-widest" style={{ color: '#9ca3af' }}>OR</span>
+                  <div className="w-px h-8" style={{ background: 'linear-gradient(to top, transparent, #6b7280)' }}></div>
+                </div>
+                <div className="flex md:hidden items-center gap-3 w-full max-w-xs">
+                  <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, transparent, #6b7280)' }}></div>
+                  <span className="font-shango text-base tracking-widest" style={{ color: '#9ca3af' }}>OR</span>
+                  <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, transparent, #6b7280)' }}></div>
+                </div>
+
+                {/* QR Code column */}
+                <div className="flex flex-col items-center gap-4 text-center">
+                  <p className="font-shango text-base tracking-widest uppercase" style={{ color: '#aebea4' }}>{t.donateQR}</p>
+                  <div className="p-3 rounded-lg" style={{ backgroundColor: 'white', boxShadow: '0 0 0 2px rgba(174,190,164,0.5), 0 4px 20px rgba(0,0,0,0.4)' }}>
+                    <ExportedImage
+                      src={donate_qr}
+                      alt="PayPal Donation QR Code"
+                      width={140}
+                      height={140}
+                      className="block"
+                      sizes="140px"
+                    />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* Accent stripe */}
+            <div className="h-1 w-full" style={{ background: 'linear-gradient(to right, #862733, #af6a28, #aebea4, #af6a28, #862733)' }}></div>
           </div>
         </div>
 
