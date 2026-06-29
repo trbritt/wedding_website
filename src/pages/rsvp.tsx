@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { useLanguage } from '@/contexts/LanguageContext';
 import React from 'react';
 import ExportedImage from "next-image-export-optimizer";
-import background from "/public/images/website_background.jpg";
+import background from "/public/images/grenoble/5.jpg";
 
 const RSVPPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -120,10 +120,11 @@ const RSVPPage = () => {
           <div className="text-center mb-12 sm:mb-16">
             <h1 className="art-deco-heading font-shango text-4xl sm:text-5xl md:text-6xl mb-4 tracking-wider"
                 style={{
-                  background: 'linear-gradient(135deg, #af6a28 0%, #862733 50%, #aebea4 100%)',
+                  background: 'linear-gradient(135deg, #ecb179 0%, #af6a28 50%, #aebea4 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text'
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(0 1px 3px rgba(0,0,0,1)) drop-shadow(0 3px 12px rgba(0,0,0,0.95)) drop-shadow(0 0 35px rgba(0,0,0,0.8))'
                 }}>
               {t.title}
             </h1>
@@ -134,7 +135,8 @@ const RSVPPage = () => {
               <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-sage-green to-transparent" style={{ background: 'linear-gradient(to right, transparent, #aebea4, transparent)' }}></div>
             </div>
 
-            <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-burgundy font-light">
+            <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl font-light"
+               style={{ color: '#e8d5c0', textShadow: '0 1px 3px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,0.95), 0 0 25px rgba(0,0,0,0.8)' }}>
               {t.subtitle}
             </p>
           </div>

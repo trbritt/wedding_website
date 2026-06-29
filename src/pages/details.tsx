@@ -5,7 +5,7 @@ import React from 'react';
 import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
 import bastide_landscape from "/public/images/bastide_map_annotated.png";
-import background from "/public/images/website_background.jpg";
+import background from "/public/images/grenoble/3.jpg";
 import donate_qr from "/public/images/donate_qr.png";
 
 const DetailsPage = () => {
@@ -197,10 +197,11 @@ const DetailsPage = () => {
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="art-deco-heading font-shango text-4xl sm:text-5xl md:text-6xl mb-4 tracking-wider"
               style={{
-                background: 'linear-gradient(135deg, #af6a28 0%, #af6a28 50%, #aebea4 100%)',
+                background: '#e8d5c0',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+                backgroundClip: 'text',
+                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.95)) drop-shadow(0 0 25px rgba(0,0,0,0.7))'
               }}>
             {t.title}
           </h1>
@@ -211,7 +212,8 @@ const DetailsPage = () => {
             <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-sage-green to-transparent" style={{ background: 'linear-gradient(to right, transparent, #aebea4, transparent)' }}></div>
           </div>
           
-          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-burgundy font-light">
+          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl font-light"
+             style={{ color: '#e8d5c0', textShadow: '0 2px 6px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7)' }}>
             {t.subtitle}
           </p>
         </div>
