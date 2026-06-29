@@ -5,6 +5,7 @@ import React from 'react';
 import Image from "next/image";
 import ExportedImage from "next-image-export-optimizer";
 import background from "/public/images/website_background.jpg";
+import image from "/public/images/grenoble/1.jpg";
 
 const CeremonyPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -81,7 +82,7 @@ const CeremonyPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-dark-green-1 via-dark-green-2 to-dark-green-1 relative overflow-hidden">
       <div className="bg-image-wrapper">
         <ExportedImage
-            src={background}
+            src={image}
             alt="test"
             fill
             className="object-cover"
@@ -132,11 +133,9 @@ const CeremonyPage = () => {
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="art-deco-heading font-shango text-4xl sm:text-5xl md:text-6xl mb-4 tracking-wider"
-              style={{ 
-                background: 'linear-gradient(135deg, #aebea4 0%, #a3474a 50%, #af6a28 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text'
+              style={{
+                color: '#ecb179',
+                textShadow: '0 0 3px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,1), 0 0 16px rgba(0,0,0,0.95), 0 2px 20px rgba(0,0,0,0.9), 0 4px 40px rgba(0,0,0,0.75)'
               }}>
             {t.title}
           </h1>
@@ -147,7 +146,8 @@ const CeremonyPage = () => {
             <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-transparent via-burgundy to-transparent" style={{ background: 'linear-gradient(to right, transparent, #862733, transparent)' }}></div>
           </div>
           
-          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl text-burgundy font-light">
+          <p className="art-nouveau-text font-recoleta text-xl sm:text-2xl font-light"
+             style={{ color: '#e8d5c0', textShadow: '0 1px 3px rgba(0,0,0,1), 0 2px 8px rgba(0,0,0,0.95), 0 0 25px rgba(0,0,0,0.8)' }}>
             {t.subtitle}
           </p>
         </div>
